@@ -21,7 +21,7 @@ def init_db():
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS users (
-            id INTEGER INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             email TEXT UNIQUE,
             credits INTEGER DEFAULT 1000000
         )
@@ -97,7 +97,6 @@ def generate_voice(data: GenerateRequest):
     conn.close()
     
     # Step D: Model Processing Logic (Fish Speech / F5-TTS Handler)
-    # Yahan aap apne Fish Speech ya F5-TTS model ka inference code run karenge.
     selected_engine = data.engine
     
     return {
